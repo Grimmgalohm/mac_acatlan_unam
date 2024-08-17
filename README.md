@@ -36,4 +36,7 @@ En cualquier caso, intentaré documentar los trabajos y/o proyectos lo mejor pos
     - Sistema de gestión de pacientes
 - Práctica VI
     - Perdida en los anales de la historia :C
-- Práctica VII
+- EPII
+    - Los subiré... algún día.
+- EEE
+    - No.
