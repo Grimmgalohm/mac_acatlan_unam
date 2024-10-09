@@ -54,9 +54,9 @@ int main(){
 	scanf("%s", expresion);
 	if(estabalanceada(expresion))
 	{
-		printf("La cadena está balanceada");
+		printf("La cadena esta balanceada");
 	}else{
-		printf("La cadena NO está balanceada");
+		printf("La cadena NO esta balanceada");
 	}
 	return 0;
 }
