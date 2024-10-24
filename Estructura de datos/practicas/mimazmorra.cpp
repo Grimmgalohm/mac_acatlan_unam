@@ -29,5 +29,8 @@ void addDugeon(Dungeon** head, Dungeon** rear, int type){
 	}
 }
 
+void showDungeon(){
+}
+
 int main(){
 }
