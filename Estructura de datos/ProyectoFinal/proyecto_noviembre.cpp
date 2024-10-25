@@ -2,17 +2,36 @@
 #include <stdlib.h>
 #include <string.h>
 
-typedef struct Cards{
+struct Cards{
 	int id;
 	char titulo;
 	char descripcion;
 	int prioridad;
 	struct Cards* siguiente;
-	struct Cards* anterior;source
-}Card;
+};
 
-struct Cards createCard(){
+struct Cards createCard(int id, char titulo, char descripcion, int prioridad){
+	struct Cards* newCard = (struct Cards*)malloc(sizeof(struct Cards));
+	newCard->id = id;
+	newCard->titulo = titulo;
+	newCard->descripcion = descripcion;
+	newCard->prioridad = prioridad;
+	newCard->siguiente = NULL;
 	
+	return newCard;
+};
+
+void push(struct Cards* tope, int id, char titulo, char descripcion, int prioridad){
+	struct Cards* newCard = createCard(id, titulo, descripcion, prioridad);
+	
+	newCard->siguiente = *tope;
+	*tope = newCard;
+	
+	printf("Tarjeta '%s' añadida.", tope->titulo);
+}
+
+void menuRegistrarTarjeta(){
+	printf("Solo un nuevo menu");
 }
 
 void menuPrincipal(){
@@ -36,7 +55,7 @@ void menuPrincipal(){
 		case 0:
 			return;
 		case 1:
-			printf("xd");
+			printf("");
 			break;
 		case 2:
 			printf("xd2");
