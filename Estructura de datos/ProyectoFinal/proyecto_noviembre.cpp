@@ -1,6 +1,4 @@
 #include <stdio.h>
-<<<<<<< HEAD
-<<<<<<< HEAD
 #include <stdlib.h>
 #include <string.h>
 
@@ -49,39 +47,9 @@ void menuPrincipal(){
 	}
 }
 
-void 
-
 int main(){
 	
 	menuPrincipal();
 	
 	return 0;
 }
-=======
-=======
->>>>>>> origin/main
-#include <string.h>
-#include <stdlib.h>
-#define MAX 500
-#define TITLE 150
-
-/*
-    Primera parte:
-    Estructuras para las listas de las tarjetas
-*/
-
-typedef struct Cards{
-    char title[TITLE];
-    char description[MAX];
-    char expiration_date[10];
-    char status[MAX];
-}Card;
-
-typedef struct Lists{
-    
-<<<<<<< HEAD
-}List;
->>>>>>> origin/main
-=======
-}List;
->>>>>>> origin/main
