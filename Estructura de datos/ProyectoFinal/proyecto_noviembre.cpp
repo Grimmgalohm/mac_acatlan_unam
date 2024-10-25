@@ -1,5 +1,6 @@
 #include <stdio.h>
 <<<<<<< HEAD
+<<<<<<< HEAD
 #include <stdlib.h>
 #include <string.h>
 
@@ -57,6 +58,8 @@ int main(){
 	return 0;
 }
 =======
+=======
+>>>>>>> origin/main
 #include <string.h>
 #include <stdlib.h>
 #define MAX 500
@@ -76,5 +79,9 @@ typedef struct Cards{
 
 typedef struct Lists{
     
+<<<<<<< HEAD
+}List;
+>>>>>>> origin/main
+=======
 }List;
 >>>>>>> origin/main
