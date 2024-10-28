@@ -1,34 +1,36 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#define TTL 150
+#define DSC 500
 
 void menuRegistrarTarjeta();
 void menuPrincipal();
+void push();
 
 struct Tarjeta{
-	int id;
-	char titulo;
-	char descripcion;
+	char titulo[TTL];
+	char descripcion[DSC];
 	int prioridad;
 	struct Tarjeta* siguiente;
 };
 
-struct Tarjeta* crearTarjeta(int id, char titulo, char descripcion, int prioridad){
+struct Tarjeta* crearTarjeta(char titulo[TTL], char descripcion[DSC], int prioridad){
 	
 	struct Tarjeta* nuevaTarjeta = (struct Tarjeta*)malloc(sizeof(struct Tarjeta));
 	
-	nuevaTarjeta->id = id;
-	nuevaTarjeta->titulo = titulo;
-	nuevaTarjeta->descripcion = descripcion;
+	nuevaTarjeta->titulo[TTL] = titulo[TTL];
+	nuevaTarjeta->descripcion[DSC] = descripcion[DSC];
 	nuevaTarjeta->prioridad = prioridad;
 	nuevaTarjeta->siguiente = NULL;
 	
 	return nuevaTarjeta;
 };
 
-void push(struct Tarjeta** tope, int id, char titulo, char descripcion, int prioridad){
+
+void push(struct Tarjeta** tope, char titulo[TTL], char descripcion[DSC], int prioridad){
 	
-	struct Tarjeta* nuevaTarjeta = crearTarjeta(id, titulo, descripcion, prioridad);
+	struct Tarjeta* nuevaTarjeta = crearTarjeta(titulo, descripcion, prioridad);
 	
 	nuevaTarjeta->siguiente = *tope;
 	
@@ -36,6 +38,34 @@ void push(struct Tarjeta** tope, int id, char titulo, char descripcion, int prio
 	
 	printf("Tarjeta '%s' añadida.", nuevaTarjeta->titulo);
 	
+}
+
+void registrarTarjeta(){
+	struct Tarjeta* tope = NULL;
+	char titulo[TTL], descripcion[DSC];
+	int prioridad, opt;
+	do{
+		
+		printf("Escribe el titulo: \n");
+		fgets(titulo, sizeof(titulo), stdin);
+		fflush(stdin);
+		printf("Descripcion:\n");
+		fgets(descripcion, sizeof(descripcion), stdin);
+		printf("Prioridad: [1] Trivial, [2] Baja, [3] Media, [4] Alta [5] Bloqueante");
+		scanf("%d", &prioridad);
+		   
+		push(&tope, titulo, descripcion, prioridad);
+		
+		printf("Titulo: %s", titulo);
+		printf("Descripción:\n");
+		printf("%s", descripcion);
+		printf("Prioridad: %d", prioridad);
+		
+		printf("Añadir nueva tarjeta?\n");
+		printf("[1]Si / [2]No\n");
+		
+		scanf("%d", &opt);
+	}while(opt!=2);
 }
 
 void menuRegistrarTarjeta(){
@@ -58,10 +88,9 @@ void menuRegistrarTarjeta(){
 	switch(opt){
 		case 0:
 			menuPrincipal();
-			fflush(stdin);
 			break;
 		case 1:
-			printf("Agregar nueva tarjeta :D");
+			registrarTarjeta();
 			break;
 		case 2:
 			printf("Editar una tarjeta xd");
@@ -96,10 +125,8 @@ void menuPrincipal(){
 			return;
 		case 1:
 			menuRegistrarTarjeta();
-			fflush(stdin);
 			break;
 		case 2:
-			fflush(stdin);
 			printf("xd2");
 			break;
 		default:
