@@ -7,6 +7,7 @@
 
 typedef struct Mazmorra{
 	int tipo;
+	
 	struct Mazmorra* siguiente;
 	struct Mazmorra* anterior;
 }Mazmorra;

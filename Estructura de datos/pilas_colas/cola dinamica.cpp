@@ -6,6 +6,7 @@ struct nodo{
 };
 struct nodo* front = NULL;
 struct nodo* rear = NULL;
+
 void enqueue(int value){
 	struct nodo* newnodo = (struct nodo*)malloc(sizeof (struct nodo));
 	newnodo->data = value;
