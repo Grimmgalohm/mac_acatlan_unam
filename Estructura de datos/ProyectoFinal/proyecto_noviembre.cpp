@@ -15,6 +15,15 @@ struct Tarjeta{
 	struct Tarjeta* siguiente;
 };
 
+//[1] Trivial, [2] Baja, [3] Media, [4] Alta [5] Bloqueante
+typedef enum {
+	TRIVIAL = 1,
+	BAJA,
+	MEDIA,
+	ALTA,
+	BLOQUEANTE
+};
+
 struct Tarjeta* crearTarjeta(char titulo[TTL], char descripcion[DSC], int prioridad){
 	
 	struct Tarjeta* nuevaTarjeta = (struct Tarjeta*)malloc(sizeof(struct Tarjeta));
@@ -36,7 +45,7 @@ void push(struct Tarjeta** tope, char titulo[TTL], char descripcion[DSC], int pr
 	
 	*tope = nuevaTarjeta;
 	
-	printf("Tarjeta '%s' añadida.", nuevaTarjeta->titulo);
+	printf("Tarjeta %s añadida.\n", nuevaTarjeta->titulo);
 	
 }
 
@@ -48,23 +57,34 @@ void registrarTarjeta(){
 		
 		printf("Escribe el titulo: \n");
 		fgets(titulo, sizeof(titulo), stdin);
-		fflush(stdin);
+		//limpia el bufer para evitar que se mezclen datos, igual en descripcion
+		titulo[strcspn(titulo, "\n")] = 0;
+		 
 		printf("Descripcion:\n");
 		fgets(descripcion, sizeof(descripcion), stdin);
+		descripcion[strcspn(descripcion, "\n")] = 0;
+		
 		printf("Prioridad: [1] Trivial, [2] Baja, [3] Media, [4] Alta [5] Bloqueante");
-		scanf("%d", &prioridad);
-		   
+		
+		while(scanf("%d", &prioridad) != 1 || prioridad < 1 || prioridad > 5){	
+			printf("Ingresa una opción valida para la prioridad\n");
+			while (getchar() != '\n'); //limpiar el bufer
+		}
+		
 		push(&tope, titulo, descripcion, prioridad);
 		
 		printf("Titulo: %s", titulo);
-		printf("Descripción:\n");
-		printf("%s", descripcion);
-		printf("Prioridad: %d", prioridad);
+		printf("\nDescripcion:");
+		printf("\n%s", descripcion);
+		printf("\nPrioridad: %d", prioridad);
 		
 		printf("Añadir nueva tarjeta?\n");
 		printf("[1]Si / [2]No\n");
-		
-		scanf("%d", &opt);
+		while(scanf("%d", &opt)!=1 || opt < 1 || opt >2){
+			printf("Por favor, ingresa una opcion valida para la prioridad\n");
+			while (getchar() != '\n'); //limpiar el bufer
+		}
+		while (getchar() != '\n'); //limpiar el bufer
 	}while(opt!=2);
 }
 
@@ -84,6 +104,7 @@ void menuRegistrarTarjeta(){
 	printf("[0] Atrás\n");
 
 	scanf("%d", &opt);
+	while (getchar() != '\n'); //limpiar el bufer
 	
 	switch(opt){
 		case 0:
@@ -118,7 +139,7 @@ void menuPrincipal(){
 	printf("[0] Salir\n");
 
 	scanf("%d", &opt);
-	fflush(stdin);
+	while (getchar() != '\n'); //limpiar el bufer
 	
 	switch(opt){
 		case 0:
