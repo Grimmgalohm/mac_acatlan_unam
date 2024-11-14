@@ -5,3 +5,5 @@ services:
       - "8000:5000"
   redis:
     image: "redis:alpine"
+
+# Los servicios que utiliza se ponen acá :v
