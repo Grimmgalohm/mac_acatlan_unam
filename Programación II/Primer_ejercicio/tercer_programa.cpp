@@ -10,20 +10,26 @@ void session_time(time_t tini){
 	printf("\n Tiempo de permanencia en el sistema %.2f seg", difftime(tfin, tini));
 }
 
-int main(){
-	//Para el contador
-	time_t tini, tfin;
-    tini = time(NULL);
-    
-    //configurar la semilla para generar números aleatorios.
+void game(){
+	
+	//configurar la semilla para generar números aleatorios.
     srand(time(NULL));
     
     //Crea el número con rango máximo de 100
     int magicNumber=rand()%101;
     
-    int lifePoints=3, answer, tryAgain;
-    	
+    system("cls");
+    
     printf("Número mágico: %d", magicNumber);
+    
+}
+
+int main(){
+	//Para el contador
+	time_t tini, tfin;
+    tini = time(NULL);
+    
+    int lifePoints=3, answer, tryAgain, exit=1;
     
     do{
     	
@@ -34,18 +40,22 @@ int main(){
     	printf("Presiona 0 para salir del programa.\n");
     	scanf("%d", &tryAgain)
     	
-		if(tryAgain!=0){
-			system("cls");
-			printf("Estoy pensando en un número entero entre el 0 y el 100\n");
-			printf("Adivinas cual es?\n");
-			printf("Respuesta: ");
-			scanf("%d", &answer);	
+		switch(tryAgain){
+			case 1:
+				break;
+				
+			case 0:
+				exit = 0;
+				break;
+				
+			default:
+				main();
 		}
 		
 		printf("Quieres jugar otra vez? \n");
 		scanf("%d", &tryAgain);
 				
-	}while(tryAgain != 1 );
+	}while(exit == 1);
 	
     session_time(tini);
 	return 0;
