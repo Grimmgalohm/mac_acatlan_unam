@@ -8,10 +8,10 @@ En cualquier caso, intentaré documentar los trabajos y/o proyectos lo mejor pos
 
 ## Indice
 
-1. [Programación II]()
-2. [Base de datos]()
-3. [POO]()
-4. [Estructura de datos]()
+1. [Programación II](/programacion_dos)
+2. [Base de datos](/base_de_datos)
+3. [POO](/poo)
+4. [Estructura de datos](/estructura_de_datos)
 5. [Métodos numéricos I](/metodos_numericos)
 6. [Métodos numéricos II]()
 
