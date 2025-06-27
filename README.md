@@ -8,12 +8,12 @@ En cualquier caso, intentaré documentar los trabajos y/o proyectos lo mejor pos
 
 ## Indice
 
-1. [Programación II] ()
-2. [Base de datos] ()
-3. [POO] ()
-4. [Estructura de datos] ()
-5. [Métodos numéricos I] (https://github.com/Grimmgalohm/mac_acatlan_unam/tree/main/metodos_numericos)
-6. [Métodos numéricos II] ()
+1. [Programación II]()
+2. [Base de datos]()
+3. [POO]()
+4. [Estructura de datos]()
+5. [Métodos numéricos I](/metodos_numericos)
+6. [Métodos numéricos II]()
 
 ## Lenguajes
 En su mayoría, los proyectos se llevarán a cabo en:
