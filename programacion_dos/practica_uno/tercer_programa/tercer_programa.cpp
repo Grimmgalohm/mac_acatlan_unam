@@ -26,7 +26,7 @@ void game(){
 
 int main(){
 	//Para el contador
-	time_t tini, tfin;
+	time_t tini;
     tini = time(NULL);
     
     int lifePoints=3, answer, tryAgain, exit=1;
@@ -34,11 +34,11 @@ int main(){
     do{
     	
     	printf(" --------------------------------- \n");
-    	printf("|        Adivina el número.       |\n"):
+    	printf("|        Adivina el número.       |\n");
     	printf(" --------------------------------- \n");
     	printf("Presiona 1 para jugar.\n");
     	printf("Presiona 0 para salir del programa.\n");
-    	scanf("%d", &tryAgain)
+    	scanf("%d", &tryAgain);
     	
 		switch(tryAgain){
 			case 1:
@@ -49,7 +49,7 @@ int main(){
 				break;
 				
 			default:
-				main();
+				exit = 1;
 		}
 		
 		printf("Quieres jugar otra vez? \n");
