@@ -20,11 +20,11 @@ int main(){
     printf("Juego: Numero magico\n");
     printf("¿Quieres empezar a jugar?\n");
     printf("[Y]Si/[N]No\n");
-    scanf("%c",&answer);
+    scanf("%c", answer);
     
     printf("%c", answer);
     
-  }while(answer!='y');
+  }while();
 
   return 0;
 }
