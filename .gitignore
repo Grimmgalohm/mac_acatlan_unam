@@ -4,3 +4,56 @@ Programación II/**/*exe
 Programación II/Primer_ejercicio/*.exe
 Programación II/Segundo_ejercicio/*.exe
 *.exe
+
+# === EMACS ===
+
+*~
+*.~*
+\#*\#
+.\#*
+*.elc
+*.swp
+*.lock
+auto-save-list/
+
+# === VIM ===
+*.swp
+*.swo
+*.swn
+*.un~
+*.vim~
+*.tmp
+
+# === GENERAL UNIX ===
+*#
+*.bak
+*.tmp
+*.temp
+
+# === C / C++ ===
+*.o
+*.out
+*.obj
+*.exe
+*.a
+*.so
+*.dll
+*.dSYM/
+*.d
+
+# === BUILD TOOLS ===
+/build/
+/dist/
+/bin/
+/Debug/
+/Release/
+CMakeFiles/
+CMakeCache.txt
+Makefile
+cmake_install.cmake
+compile_commands.json
+
+# === SISTEMA ===
+.DS_Store
+Thumbs.db
+ehthumbs.db
