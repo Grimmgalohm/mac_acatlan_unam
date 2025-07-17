@@ -58,3 +58,10 @@ compile_commands.json
 Thumbs.db
 ehthumbs.db
 programacion_dos/practica_uno/tercer_programa/tercer_programa
+
+# === BIN ===
+a.out
+
+**/bin/
+**/build/
+**/out/
