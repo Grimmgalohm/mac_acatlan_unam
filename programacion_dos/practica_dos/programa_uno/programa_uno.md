@@ -4,7 +4,7 @@ Generar una matriz triangular superior con números (pseudo) aleatorios entre  e
 
 ## Background
 
-Una matriz triangular superior es una matriz cuadrada "que tiene todos los elementos nulos por debajo de la diagonal principal" ([Universo Formulas](https://www.universoformulas.com/matematicas/algebra/matriz-triangular-superior/#:~:text=Una%20matriz%20triangular%20superior%20es,(inicial%20del%20ingl%C3%A9s%20upper)., s.f.).
+Una matriz triangular superior es una matriz cuadrada "que tiene todos los elementos nulos por debajo de la diagonal principal"(**Ojo con esta condición**) ([Universo Formulas](https://www.universoformulas.com/matematicas/algebra/matriz-triangular-superior/#:~:text=Una%20matriz%20triangular%20superior%20es,(inicial%20del%20ingl%C3%A9s%20upper)., s.f.).
 Siendo más exactos, siendo "A" la matriz, y sus elementos a<sub>ij</sub>, entonces a<sub>ij</sub>=0 para todo i>j.
 
 $$
@@ -45,11 +45,18 @@ Ahora, adicional a esto, buscamos imprimir una matriz triangular superior, por l
 A = | 2  1  3 |
     | 0  4  5 |
     | 0  0  6 |
-// De forma que si busco la posición 2,2 (note que no estoy hablando de una coordenada cartesiana) nos referimos a la fila 2, columna 2. De forma que el elemento que buscamos es el 4 (de la matriz A que muestro en la fig 2.3)
-// Y emm... eso. Si aplicamos la regla de discriminación para la matriz triangular, la fila 3 (i) > columna 1 (j) por tanto es igual a 0.
+// De forma que si busco la posición 2,3 (note que no estoy hablando de una coordenada cartesiana) nos referimos a la fila 2, columna 4. De forma que el elemento que buscamos es el 5 (de la matriz A que muestro en la fig 2.3)
+// Si revisamos la condición, la fila 2 (i) !> (j) la columna 3 por tanto, el espacio puede no ser nulo.
+// De igual forma, la posición 3,1 (si la revisamos con la condición dada) 3>1 por tanto es 0.
+// Pero ¿y la fila 2,2? o [1,1] o la [3,3] estríctamente hablando, 3 no es mayor que 3... es igual.
+// Bueno, para eso, en la definición nos dicen que (recordando) "tiene todos los elementos nulos **por debajo de la diagonal principal**
+// ¿Y cuál es la diagonal principal? Son "*los elementos de la matriz cuadrada que tienen el mismo número de fila que de columna forman la diagonal principal. [Cómo Calcular](https://comocalcular.online/propiedades-de-las-matrices/diagonal-principal-de-una-matriz/)* (s.f.)"
+
+//Por tanto, para facilitar la programación podemos argumentar que se van a llenar todos los espacios ij con i>=j.
 ```
 ## Plip!
 plop!
 
 ## Referencias
-Universo Formulas. (s.f.). Matriz triangular superior. Recuperado el 18 de julio de 2025, de https://www.universoformulas.com/matematicas/algebra/matriz-triangular-superior/
+- Universo Formulas. (s.f.). Matriz triangular superior. Recuperado el 18 de julio de 2025, de https://www.universoformulas.com/matematicas/algebra/matriz-triangular-superior/
+- Cómo Calcular. (s.f.). *Diagonal principal de una matriz*. Recuperado de https://comocalcular.online/propiedades-de-las-matrices/diagonal-principal-de-una-matriz/

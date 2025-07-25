@@ -26,12 +26,6 @@ void playGame(){
   
   do{
     system("clear");
-    /*TODO: 
-      - set a counter for intents
-      - set a subquestion for exit if cant doit
-      - for each intent evaluate and told the player is mayor or lesser
-      - if wins, gives another number until player stops game
-     */
     
     printf("Adivina el numero magico...\nEl numero magico es...\n");
     do{
